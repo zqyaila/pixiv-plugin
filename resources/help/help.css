@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+
+:root {
+  --primary: #0096fa;
+  --accent: #ff5c8d;
+  --dark: #2f3e46;
+  --glass: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* 背景层处理 */
+.background {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  z-index: -1;
+}
+
+.container {
+  width: 680px;
+  padding: 40px;
+  position: relative;
+}
+
+/* 头部 */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 150, 250, 0.3);
+  margin-right: 20px;
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.title-box h1 {
+  font-size: 32px;
+  color: var(--dark);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge.ver { background: var(--dark); color: #fff; }
+.badge.plugin { background: rgba(0,0,0,0.05); color: #666; }
+
+/* 卡片通用样式 */
+.card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 搜索卡片 */
+.cmd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cmd-item {
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.code {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.desc {
+  font-size: 12px;
+  color: #888;
+}
+
+/* 排行榜卡片 */
+.rank-list {
+  display: flex;
+  gap: 12px;
+}
+
+.rank-item {
+  flex: 1;
+  background: linear-gradient(145deg, #ffffff, #f0f2f5);
+  padding: 15px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.rank-item.day { border-bottom: 3px solid #ff9f1c; }
+.rank-item.week { border-bottom: 3px solid #2ec4b6; }
+.rank-item.month { border-bottom: 3px solid #ff5c8d; }
+
+.rank-item .lbl {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.rank-item .sub {
+  font-size: 10px;
+  color: #999;
+}
+
+/* 设置列表 */
+.cmd-list-simple .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.05);
+}
+
+.cmd-list-simple .row:last-child { border-bottom: none; }
+
+.c-code {
+  font-family: 'JetBrains Mono', monospace;
+  color: #444;
+  font-size: 13px;
+  background: rgba(0,0,0,0.03);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.c-desc {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 底部状态栏 */
+.status-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  background: var(--dark);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(47, 62, 70, 0.3);
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -7.5px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.stat-label {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.stat-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-val span {
+  font-size: 10px;
+  color: #fff;
+  margin-left: 2px;
+  font-weight: 400;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 10px;
+  color: rgba(0,0,0,0.4);
+  font-family: 'JetBrains Mono', monospace;
+}
