@@ -1,0 +1,9 @@
+proxy: ""
+r18: 0
+size: regular
+maxResults: 5
+cooldown: 10
+forwardMsg: true
+timeout: 30
+imageTimeout: 15
+sendPartialOnTimeout: true
