@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>{{STYLE}}</style>
+</head>
+<body>
+  <!-- 背景层 -->
+  <div class="background" style="background-image: url('{{BG}}')"></div>
+  <div class="overlay"></div>
+
+  <!-- 主容器 -->
+  <div id="app" class="container">
+    
+    <!-- 头部 -->
+    <div class="header">
+      <div class="logo-box">
+        <div class="logo">P</div>
+      </div>
+      <div class="title-box">
+        <h1>Pixiv Search</h1>
+        <div class="badges">
+          <span class="badge ver">v2.0 Pro</span>
+          <span class="badge plugin">Yunzai-Plugin</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容区 -->
+    <div class="content">
+      
+      <!-- 搜索模块 -->
+      <div class="card search-card">
+        <div class="card-title"><span class="icon">🔍</span> 核心搜索</div>
+        <div class="cmd-grid">
+          <div class="cmd-item">
+            <div class="code">#搜图 &lt;关键词&gt;</div>
+            <div class="desc">搜索插画作品</div>
+          </div>
+          <div class="cmd-item">
+            <div class="code">#p站随机图 [标签]</div>
+            <div class="desc">发现随机美图</div>
+          </div>
+          <div class="cmd-item">
+            <div class="code">#pid &lt;数字&gt;</div>
+            <div class="desc">精准ID获取</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 排行榜模块 -->
+      <div class="card rank-card">
+        <div class="card-title"><span class="icon">🏆</span> 排行榜单</div>
+        <div class="rank-list">
+          <div class="rank-item day">
+            <span class="lbl">#p站排行榜</span>
+            <span class="sub">每日精选 TOP10</span>
+          </div>
+          <div class="rank-item week">
+            <span class="lbl">#p站排行榜周</span>
+            <span class="sub">本周热门</span>
+          </div>
+          <div class="rank-item month">
+            <span class="lbl">#p站排行榜月</span>
+            <span class="sub">月度殿堂</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 设置模块 -->
+      <div class="card settings-card">
+        <div class="card-title"><span class="icon">⚙️</span> 管理配置</div>
+        <div class="cmd-list-simple">
+          <div class="row">
+            <span class="c-code">#设置p站超时 &lt;秒&gt;</span>
+            <span class="c-desc">设置请求超时时间</span>
+          </div>
+          <div class="row">
+            <span class="c-code">#设置p站数量 &lt;数&gt;</span>
+            <span class="c-desc">设置默认返回张数</span>
+          </div>
+          <div class="row">
+            <span class="c-code">#p站设置</span>
+            <span class="c-desc">查看当前详细配置</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部状态栏 -->
+      <div class="status-bar">
+        <div class="stat-item">
+          <div class="stat-label">超时时间</div>
+          <div class="stat-val">{{TIMEOUT}}<span>s</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">冷却CD</div>
+          <div class="stat-val">{{COOLDOWN}}<span>s</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">搜索数量</div>
+          <div class="stat-val">{{MAX_RESULTS}}<span>P</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">随机上限</div>
+          <div class="stat-val">{{MAX_RANDOM}}<span>P</span></div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="footer">
+      Created by Yunzai-Bot & Pixiv-Plugin
+    </div>
+  </div>
+</body>
+</html>
